@@ -1,5 +1,5 @@
 require_relative 'number_formatter'
-require_relative 'validator'
+require_relative 'number_validator'
 
 class CreditCheck
   include NumberFormatter
