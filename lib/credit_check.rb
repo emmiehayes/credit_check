@@ -35,6 +35,4 @@ class CreditCheck
       "Card is invalid."
     end
   end
-
-
 end

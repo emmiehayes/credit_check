@@ -37,16 +37,27 @@ class CreditCheckTest < Minitest::Test
     assert_equal 80, cc.sum_final_array
   end
 
-  def test_can_can_check_card_validation
+  def test_can_can_recognize_valid_card_numbers
     cc = CreditCheck.new("4929735477250543")
+    cc = CreditCheck.new("4024007136512380")
+    cc = CreditCheck.new("6011797668867828")
     assert_equal "Card is valid.", cc.validate
   end
 
+  def test_can_recognize_invalid_card_numbers
+    cc = CreditCheck.new("5541801923795240")
+    cc = CreditCheck.new("4024007106512380")
+    cc = CreditCheck.new("6011797668868728")
+    assert_equal "Card is invalid.", cc.validate
+  end
 
+  def test_can_recognize_valid_American_Express_number
+    cc = CreditCheck.new("342804633855673")
+    assert_equal "Card is valid.", cc.validate
+  end
 
-
-
-
-
-
+  def test_can_recognize_invalid_American_Express_number
+    cc = CreditCheck.new("342801633855673")
+    assert_equal "Card is invalid.", cc.validate
+  end
 end
