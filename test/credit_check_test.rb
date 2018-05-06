@@ -28,8 +28,8 @@ class CreditCheckTest < Minitest::Test
 
   def test_it_can_sum_numbers_over_nine
     cc = CreditCheck.new("4929735477250543")
-    expected = [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8]
-    assert_equal expected, cc.double_every_other_number
+    expected = [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8]
+    assert_equal expected, cc.sum_numbers_over_9
   end
 
   def test_it_can_sum_the_final_array
