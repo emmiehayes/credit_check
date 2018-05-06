@@ -1,6 +1,7 @@
 module NumberValidator
+
   def validate
-    if sum_final_array % 10 == 0
+    if sum_final_array % 10 == 0 && sum_final_array != 0
       "Card is valid."
     else
       "Card is invalid."

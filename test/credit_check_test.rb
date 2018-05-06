@@ -60,4 +60,9 @@ class CreditCheckTest < Minitest::Test
     cc = CreditCheck.new("342801633855673")
     assert_equal "Card is invalid.", cc.validate
   end
+
+  def test_can_handle_empty_case
+    cc = CreditCheck.new("")
+    assert_equal "Card is invalid.", cc.validate
+  end
 end
