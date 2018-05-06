@@ -3,7 +3,7 @@ require_relative 'validator'
 
 class CreditCheck
   include NumberFormatter
-  include Validator
+  include NumberValidator
 
   attr_reader :card_number
 
